@@ -1,14 +1,7 @@
-import {
-  Calendar,
-  ChevronUp,
-  Home,
-  Inbox,
-  MoreHorizontal,
-  Plus,
-  Search,
-  Settings,
-  User2,
-} from "lucide-react";
+"use client";
+
+import * as React from "react";
+import { ChevronUp, Plus, User2 } from "lucide-react";
 
 import {
   Sidebar,
@@ -18,57 +11,107 @@ import {
   SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
-  SidebarMenuAction,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-
-// const { open } = useSidebar();
-
-const activeItem = "Ratty Corner";
+} from "@/components/ui/dropdown-menu";
+import Link from "next/link";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 // Menu items.
 const items = [
   {
     title: "Ratty Corner",
     url: "#",
-    icon: Home,
+    channels: [
+      {
+        title: "#general",
+        notifications: 12,
+      },
+      {
+        title: "#the-other-general",
+        notifications: 2,
+      },
+    ],
+    notifications: 9920,
   },
   {
     title: "Game Hub",
     url: "#",
-    icon: Inbox,
+    channels: [
+      {
+        title: "Channel A",
+        notifications: 27,
+      },
+    ],
+    notifications: 9920,
   },
   {
     title: "Administration Server",
     url: "#",
-    icon: Calendar,
+    channels: [
+      {
+        title: "Channel A",
+        notifications: 27,
+      },
+    ],
+    notifications: 9920,
   },
   {
     title: "Godot Server",
     url: "#",
-    icon: Search,
+    channels: [
+      {
+        title: "Channel A",
+        notifications: 27,
+      },
+    ],
+    notifications: 9920,
   },
   {
     title: "Godot Wild Jam",
     url: "#",
-    icon: Settings,
+    channels: [
+      {
+        title: "Channel A",
+        notifications: 27,
+      },
+    ],
+    notifications: 9920,
   },
 ];
 
 export function AppSidebar() {
+  const [activeItem, setActiveItem] = React.useState<string>("Ratty Corner");
+
   return (
     <Sidebar collapsible="icon">
       <SidebarContent>
+        <SidebarHeader>
+          <div className="flex items-center font-bold">
+            <span className="flex-1 group-data-[collapsible=icon]:hidden">
+              Discord
+            </span>
+            <SidebarTrigger />
+          </div>
+        </SidebarHeader>
         <SidebarGroup>
           <SidebarGroupLabel>Servers</SidebarGroupLabel>
           <SidebarGroupAction>
@@ -77,35 +120,51 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={item.title === activeItem}
-                  >
-                    <a href={item.url}>
-                      <Avatar>
-                        <AvatarImage src="https://github.com/shadcn.png" />
-                        <AvatarFallback>CN</AvatarFallback>
-                      </Avatar>
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <SidebarMenuAction>
-                        <MoreHorizontal />
-                      </SidebarMenuAction>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent side="right" align="start">
-                      <DropdownMenuItem>
-                        <span>Edit Project</span>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <span>Delete Project</span>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </SidebarMenuItem>
+                <Collapsible
+                  open={activeItem === item.title}
+                  onOpenChange={() => setActiveItem(item.title)}
+                  className="group/collapsible"
+                  key={item.title}
+                >
+                  <SidebarMenuItem>
+                    <CollapsibleTrigger asChild>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={item.title === activeItem}
+                        variant={"outline"}
+                        className="p-0"
+                      >
+                        <Link href={item.url}>
+                          <Avatar className="w-8 h-8">
+                            <AvatarImage src="https://github.com/shadcn.png" />
+                            <AvatarFallback>CN</AvatarFallback>
+                          </Avatar>
+                          <span>{item.title}</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <SidebarMenuSub>
+                        {item.channels.map((channel) => (
+                          <SidebarMenuSubItem key={channel.title}>
+                            <SidebarMenuSubButton>
+                              {/* <Link href={item.url}> */}
+                              <span>{channel.title}</span>
+                              {/* </Link> */}
+                              <SidebarMenuBadge>
+                                {channel.notifications != 0 &&
+                                  channel.notifications}
+                              </SidebarMenuBadge>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
+                        ))}
+                      </SidebarMenuSub>
+                    </CollapsibleContent>
+                    <SidebarMenuBadge>
+                      {item.notifications != 0 && item.notifications}
+                    </SidebarMenuBadge>
+                  </SidebarMenuItem>
+                </Collapsible>
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
