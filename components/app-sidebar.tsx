@@ -66,22 +66,11 @@ import {
   ContextMenuSubTrigger,
   ContextMenuTrigger,
 } from "./ui/context-menu";
-import useSWR from "swr";
-import { toast } from "sonner";
-
-const fetcher = (url) => fetch(url).then((r) => r.json());
+import { useUser } from "@/app/lib/api";
 
 export function AppSidebar() {
-  const { data, error, isLoading } = useSWR("/api/user", fetcher);
+  const { data: items, isValid } = useUser();
   const [activeItem, setActiveItem] = React.useState<string>("Game Hub");
-
-  const isInvalid = isLoading || error;
-
-  if (error) {
-    toast(`Error: ${error.message}`);
-  }
-
-  const items = data;
 
   return (
     <Sidebar collapsible="icon">
@@ -100,17 +89,9 @@ export function AppSidebar() {
             <Plus /> <span className="sr-only">Add Project</span>
           </SidebarGroupAction>
           <SidebarGroupContent>
-            {isInvalid ? (
+            {isValid ? (
               <SidebarMenu>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <SidebarMenuItem key={index}>
-                    <SidebarMenuSkeleton />
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            ) : (
-              <SidebarMenu>
-                {items.map((item) => (
+                {items!.map((item) => (
                   <Collapsible
                     open={activeItem === item.title}
                     onOpenChange={() => setActiveItem(item.title)}
@@ -239,6 +220,14 @@ export function AppSidebar() {
                       </CollapsibleContent>
                     </SidebarMenuItem>
                   </Collapsible>
+                ))}
+              </SidebarMenu>
+            ) : (
+              <SidebarMenu>
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <SidebarMenuItem key={index}>
+                    <SidebarMenuSkeleton />
+                  </SidebarMenuItem>
                 ))}
               </SidebarMenu>
             )}
