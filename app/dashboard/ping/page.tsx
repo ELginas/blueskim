@@ -1,7 +1,7 @@
 import { ping } from "@/app/lib/data";
 
 export default async function Ping() {
-  const result = await ping();
+  await ping();
 
   return (
     <section>
