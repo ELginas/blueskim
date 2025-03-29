@@ -1,7 +1,24 @@
 "use client";
 
 import * as React from "react";
-import { ChevronUp, Plus, User2 } from "lucide-react";
+import {
+  ChevronUp,
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  User2,
+  UserPlus,
+  Users,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -34,6 +51,20 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuGroup,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuPortal,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from "./ui/context-menu";
 
 // Menu items.
 const items = [
@@ -127,22 +158,113 @@ export function AppSidebar() {
                   key={item.title}
                 >
                   <SidebarMenuItem>
-                    <CollapsibleTrigger asChild>
-                      <SidebarMenuButton
-                        asChild
-                        isActive={item.title === activeItem}
-                        variant={"outline"}
-                        className="p-0"
-                      >
-                        <Link href={item.url}>
-                          <Avatar className="w-8 h-8">
-                            <AvatarImage src="https://github.com/shadcn.png" />
-                            <AvatarFallback>CN</AvatarFallback>
-                          </Avatar>
-                          <span>{item.title}</span>
-                        </Link>
-                      </SidebarMenuButton>
-                    </CollapsibleTrigger>
+                    <ContextMenu>
+                      <ContextMenuTrigger>
+                        <CollapsibleTrigger asChild>
+                          <SidebarMenuButton
+                            asChild
+                            isActive={item.title === activeItem}
+                            variant={"outline"}
+                            className="p-0"
+                          >
+                            <Link href={item.url}>
+                              <Avatar className="w-8 h-8">
+                                <AvatarImage src="https://github.com/shadcn.png" />
+                                <AvatarFallback>CN</AvatarFallback>
+                              </Avatar>
+                              <span>{item.title}</span>
+                            </Link>
+                          </SidebarMenuButton>
+                        </CollapsibleTrigger>
+
+                        <SidebarMenuBadge>
+                          {item.notifications != 0 && item.notifications}
+                        </SidebarMenuBadge>
+                      </ContextMenuTrigger>
+                      <ContextMenuContent>
+                        {/* <ContextMenuItem>Create Channel</ContextMenuItem>
+                        <ContextMenuItem>Mute Server</ContextMenuItem>
+                        <ContextMenuItem>Delete Server</ContextMenuItem> */}
+                        <ContextMenuLabel>My Account</ContextMenuLabel>
+                        <ContextMenuSeparator />
+                        <ContextMenuGroup>
+                          <ContextMenuItem>
+                            <User />
+                            <span>Profile</span>
+                            <ContextMenuShortcut>⇧⌘P</ContextMenuShortcut>
+                          </ContextMenuItem>
+                          <ContextMenuItem>
+                            <CreditCard />
+                            <span>Billing</span>
+                            <ContextMenuShortcut>⌘B</ContextMenuShortcut>
+                          </ContextMenuItem>
+                          <ContextMenuItem>
+                            <Settings />
+                            <span>Settings</span>
+                            <ContextMenuShortcut>⌘S</ContextMenuShortcut>
+                          </ContextMenuItem>
+                          <ContextMenuItem>
+                            <Keyboard />
+                            <span>Keyboard shortcuts</span>
+                            <ContextMenuShortcut>⌘K</ContextMenuShortcut>
+                          </ContextMenuItem>
+                        </ContextMenuGroup>
+                        <ContextMenuSeparator />
+                        <ContextMenuGroup>
+                          <ContextMenuItem>
+                            <Users />
+                            <span>Team</span>
+                          </ContextMenuItem>
+                          <ContextMenuSub>
+                            <ContextMenuSubTrigger>
+                              <User />
+                              <span>Invite users</span>
+                            </ContextMenuSubTrigger>
+                            <ContextMenuPortal>
+                              <ContextMenuSubContent>
+                                <ContextMenuItem>
+                                  <Mail />
+                                  <span>Email</span>
+                                </ContextMenuItem>
+                                <ContextMenuItem>
+                                  <MessageSquare />
+                                  <span>Message</span>
+                                </ContextMenuItem>
+                                <ContextMenuSeparator />
+                                <ContextMenuItem>
+                                  <PlusCircle />
+                                  <span>More...</span>
+                                </ContextMenuItem>
+                              </ContextMenuSubContent>
+                            </ContextMenuPortal>
+                          </ContextMenuSub>
+                          <ContextMenuItem>
+                            <Plus />
+                            <span>New channel</span>
+                            <ContextMenuShortcut>⌘+T</ContextMenuShortcut>
+                          </ContextMenuItem>
+                        </ContextMenuGroup>
+                        <ContextMenuSeparator />
+                        <ContextMenuItem>
+                          <Github />
+                          <span>GitHub</span>
+                        </ContextMenuItem>
+                        <ContextMenuItem>
+                          <LifeBuoy />
+                          <span>Support</span>
+                        </ContextMenuItem>
+                        <ContextMenuItem disabled>
+                          <Cloud />
+                          <span>API</span>
+                        </ContextMenuItem>
+                        <ContextMenuSeparator />
+                        <ContextMenuItem>
+                          <LogOut />
+                          <span>Log out</span>
+                          <ContextMenuShortcut>⇧⌘Q</ContextMenuShortcut>
+                        </ContextMenuItem>
+                      </ContextMenuContent>
+                    </ContextMenu>
                     <CollapsibleContent>
                       <SidebarMenuSub>
                         {item.channels.map((channel) => (
@@ -160,9 +282,6 @@ export function AppSidebar() {
                         ))}
                       </SidebarMenuSub>
                     </CollapsibleContent>
-                    <SidebarMenuBadge>
-                      {item.notifications != 0 && item.notifications}
-                    </SidebarMenuBadge>
                   </SidebarMenuItem>
                 </Collapsible>
               ))}
