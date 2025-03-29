@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-export default function Dashboard({ children }: { children: React.ReactNode }) {
+export default function Dashboard() {
   return (
     <section>
       <p>Dashboard is currently work in progress.</p>

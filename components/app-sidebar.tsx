@@ -217,7 +217,7 @@ export function AppSidebar() {
                           </ContextMenuItem>
                           <ContextMenuSub>
                             <ContextMenuSubTrigger>
-                              <User />
+                              <UserPlus />
                               <span>Invite users</span>
                             </ContextMenuSubTrigger>
                             <ContextMenuPortal>
