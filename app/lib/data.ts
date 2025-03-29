@@ -20,5 +20,5 @@ export async function getItems(username: string) {
   const entry = await db.collection("users").findOne({
     username,
   });
-  return entry.servers;
+  return entry!.servers;
 }
