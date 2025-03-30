@@ -1,3 +1,5 @@
+import { ModeToggle } from "@/components/mode-toggle";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import {
   SignedIn,
   SignedOut,
@@ -18,6 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <UserButton />
         </SignedIn>
       </header>
+      <ModeToggle />
       {children}
     </>
   );
