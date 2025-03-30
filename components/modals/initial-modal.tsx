@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
 import {
   Dialog,
@@ -23,6 +24,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z
@@ -46,11 +48,20 @@ export const InitialModal = () => {
       imageUrl: "",
     },
   });
+  const router = useRouter();
 
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    try {
+      await axios.post(`/api/servers`, values);
+
+      form.reset();
+      router.refresh();
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
