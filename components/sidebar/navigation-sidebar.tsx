@@ -28,10 +28,12 @@ export const NavigationSidebar = async () => {
     <div className="w-[72px] flex flex-col items-center bg-sidebar py-3 gap-4">
       <NavigationAction />
       <Separator className="w-10 mx-auto h-[2px]" />
-      <ScrollArea className="flex-1 w-full">
-        {servers.map((server) => (
-          <NavigationServer key={server.id} server={server} />
-        ))}
+      <ScrollArea className="flex-1 w-full ">
+        <div className="flex flex-col gap-2">
+          {servers.map((server) => (
+            <NavigationServer key={server.id} server={server} />
+          ))}
+        </div>
       </ScrollArea>
       <ModeToggle />
       <SignedIn>

@@ -39,8 +39,9 @@ export const NavigationServer = ({ server }: Props) => {
       </Tooltip>
       <div
         className={cn(
-          "absolute left-0 w-[3px] bg-white rounded-r-full transition-all h-[12px] peer-hover:h-[24px]",
-          active && "h-[24px]"
+          "absolute left-0 w-[3px] bg-white rounded-r-full transition-all h-[12px]",
+          active && "h-[36px]",
+          !active && "peer-hover:h-[24px]"
         )}
       ></div>
     </div>
