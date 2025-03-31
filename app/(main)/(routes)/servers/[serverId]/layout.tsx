@@ -2,7 +2,7 @@ import { ServerSidebar } from "@/components/sidebar/server-sidebar";
 
 type Props = {
   children: React.ReactNode;
-  params: { serverId: string };
+  params: Promise<{ serverId: string }>;
 };
 
 const Layout = async ({ children, params }: Props) => {
