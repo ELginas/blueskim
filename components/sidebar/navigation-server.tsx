@@ -31,6 +31,7 @@ export const NavigationServer = ({ server }: Props) => {
           className="peer relative group mx-3 h-[48px] w-[48px] rounded-[24px] hover:rounded-[16px] transition-all overflow-hidden"
           onClick={onClick}
         >
+          {/* Can't optimize because UploadThing doesn't support fetching image with specific width AND height */}
           <Image fill src={server.imageUrl} alt="Channel" />
         </TooltipTrigger>
         <TooltipContent side="right" align="center" className="font-medium">

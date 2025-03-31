@@ -1,19 +1,22 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import { NavigationAction } from "@/components/sidebar/navigation-action";
 import { NavigationServer } from "@/components/sidebar/navigation-server";
+import { UserButton } from "@/components/sidebar/user-button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-import { SignedIn, UserButton } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 export const NavigationSidebar = async () => {
+  let start = Date.now();
   const profile = await currentProfile();
+  console.log(`[navigation-sidebar:currentProfile]: ${Date.now() - start}ms`);
   if (!profile) {
     return redirect("/");
   }
 
+  start = Date.now();
   const servers = await db.server.findMany({
     where: {
       members: {
@@ -23,6 +26,7 @@ export const NavigationSidebar = async () => {
       },
     },
   });
+  console.log(`[navigation-sidebar:findMany]: ${Date.now() - start}ms`);
 
   return (
     <div className="w-[72px] flex flex-col items-center bg-sidebar py-3 gap-4">
@@ -36,15 +40,7 @@ export const NavigationSidebar = async () => {
         </div>
       </ScrollArea>
       <ModeToggle />
-      <SignedIn>
-        <UserButton
-          appearance={{
-            elements: {
-              avatarBox: "h-[32px]! w-[32px]!",
-            },
-          }}
-        />
-      </SignedIn>
+      <UserButton />
     </div>
   );
 };

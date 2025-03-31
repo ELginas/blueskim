@@ -16,11 +16,15 @@ const channelIcons = {
 };
 
 export const ServerSidebar = async ({ serverId }: Props) => {
+  let start = Date.now();
   const profile = await currentProfile();
+  console.log(`[server-sidebar:currentProfile]: ${Date.now() - start}ms`);
+
   if (!profile) {
     return redirect("/");
   }
 
+  start = Date.now();
   const server = await db.server.findUnique({
     where: {
       id: serverId,
@@ -51,6 +55,7 @@ export const ServerSidebar = async ({ serverId }: Props) => {
       },
     },
   });
+  console.log(`[server-sidebar:findUnique]: ${Date.now() - start}ms`);
 
   if (!server) {
     return redirect("/");

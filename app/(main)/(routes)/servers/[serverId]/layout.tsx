@@ -6,9 +6,10 @@ type Props = {
 };
 
 const Layout = async ({ children, params }: Props) => {
+  const { serverId } = await params;
   return (
     <>
-      <ServerSidebar serverId={params.serverId} />
+      <ServerSidebar serverId={serverId} />
       {children}
     </>
   );
