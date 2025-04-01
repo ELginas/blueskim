@@ -1,1 +1,13 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+@theme {
+  --color-background: #000000;
+  --color-gray: #29292d;
+}

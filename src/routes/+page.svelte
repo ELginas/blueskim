@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+  import NavSidebar from "$lib/components/NavSidebar.svelte";
+  import { Tooltip } from "bits-ui";
+</script>
+
+<div class="flex h-full">
+  <Tooltip.Provider>
+    <NavSidebar />
+  </Tooltip.Provider>
+</div>
