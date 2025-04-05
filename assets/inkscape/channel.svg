@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="channel.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="26.21875"
+     inkscape:cx="5.2824791"
+     inkscape:cy="8.9821216"
+     inkscape:window-width="1920"
+     inkscape:window-height="1050"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="4"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1"
+       style="display:none">
+      <g
+         id="g10"
+         transform="matrix(1,0,-0.25,1,2.5,0)">
+        <path
+           style="fill:#000000;stroke:#000000;stroke-linecap:round"
+           d="M 5,2 V 14"
+           id="path9"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:#000000;stroke:#000000;stroke-linecap:round"
+           d="M 10,2 V 14"
+           id="path10"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <g
+         id="g14"
+         transform="rotate(-90,7.75,7.75)">
+        <path
+           style="fill:#000000;stroke:#000000;stroke-linecap:round"
+           d="M 5,2 V 14"
+           id="path13"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:#000000;stroke:#000000;stroke-linecap:round"
+           d="M 10,2 V 14"
+           id="path14"
+           sodipodi:nodetypes="cc" />
+      </g>
+    </g>
+    <path
+       d="M 7.125,1.5 C 6.8488576,1.5 6.5690356,1.7238576 6.5,2 L 5.75,5 H 2 C 1.7238576,5 1.5,5.2238576 1.5,5.5 1.5,5.7761424 1.7238576,6 2,6 h 3.5 l -1,4 H 2 C 1.7238576,10 1.5,10.223858 1.5,10.5 1.5,10.776142 1.7238576,11 2,11 H 4.25 L 3.5,14 c -0.069036,0.276142 0.098858,0.5 0.375,0.5 0.2761424,0 0.5559644,-0.223858 0.625,-0.5 l 0.75,-3 h 4 L 8.5,14 c -0.069036,0.276142 0.098858,0.5 0.375,0.5 0.2761424,0 0.5559644,-0.223858 0.625,-0.5 l 0.75,-3 H 14 c 0.276142,0 0.5,-0.223858 0.5,-0.5 C 14.5,10.223858 14.276142,10 14,10 h -3.5 l 1,-4 H 14 C 14.276142,6 14.5,5.7761424 14.5,5.5 14.5,5.2238576 14.276142,5 14,5 H 11.75 L 12.5,2 C 12.569036,1.7238576 12.401142,1.5 12.125,1.5 11.848858,1.5 11.569036,1.7238576 11.5,2 l -0.75,3 h -4 L 7.5,2 C 7.5690356,1.7238576 7.4011424,1.5 7.125,1.5 Z M 6.5,6 h 4 l -1,4 h -4 z"
+       style="stroke-linecap:round"
+       id="path23" />
+  </g>
+</svg>

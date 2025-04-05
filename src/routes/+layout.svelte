@@ -1,7 +1,10 @@
 <script>
-	import '../app.css';
-	
-	let { children } = $props();
+  import "../app.css";
+  import { Tooltip } from "bits-ui";
+
+  let { children } = $props();
 </script>
 
-{@render children()}
+<Tooltip.Provider>
+  {@render children()}
+</Tooltip.Provider>

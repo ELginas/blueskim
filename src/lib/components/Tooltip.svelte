@@ -20,7 +20,7 @@
           <div {...props} transition:fly={{ duration: 100 }}>
             <Tooltip.Arrow />
             <div
-              class="bg-black border-gray border text-white p-2 text-xs font-medium rounded-md"
+              class="bg-background border-gray-200 border text-white p-2 text-xs font-medium rounded-md"
             >
               {@render content?.()}
             </div>
