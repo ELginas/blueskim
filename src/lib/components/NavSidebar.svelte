@@ -1,5 +1,4 @@
 <script>
-  import { ContextMenu } from "bits-ui";
   import NavEntry from "./NavEntry.svelte";
   import SidebarSeparator from "./SidebarSeparator.svelte";
   import NavButton from "./NavButton.svelte";

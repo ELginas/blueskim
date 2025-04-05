@@ -1,8 +1,5 @@
 <script>
-  import IconChannel from "$lib/icons/IconChannel.svelte";
-  import IconConversation from "$lib/icons/IconConversation.svelte";
-
-  const { Icon = IconChannel, name, disabled } = $props();
+  const { Icon, name, disabled } = $props();
 </script>
 
 <span

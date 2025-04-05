@@ -6,6 +6,6 @@
 
 <div class="flex h-full">
   <NavSidebar />
-  <ServerSidebar name="Godot Wild Jam 200 2001 2002" />
+  <ServerSidebar name="ąĄčęėįšų„rasmjgllll｜∫rasmjglrasmjglrasmjglrasmjgl" />
   <MainContent />
 </div>

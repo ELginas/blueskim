@@ -1,13 +1,23 @@
 <script>
+  import i18n from "$lib/i18n";
   import IconLoading from "$lib/icons/IconLoading.svelte";
   import LiveStatus from "./LiveStatus.svelte";
+
+  const { username, status } = $props();
 </script>
 
-<div class="p-1 flex border-t border-border items-center gap-1">
-  <IconLoading color="white" />
-  <span class="text-white text-sm/sm select-none drag-none"
-    ><span class="font-bold">Simon</span> is typing...</span
+<div
+  class="px-1 py-0.5 flex border-t border-border items-center gap-1 overflow-hidden"
+>
+  <IconLoading class="text-white w-[16px] h-[6px] flex-none" />
+  <span class="text-white text-sm/sm select-none drag-none truncate font-bold"
+    >{username}</span
   >
-  <div class="flex-1"></div>
-  <LiveStatus state="offline" message="Websockets server is offline" />
+  <span class="whitespace-nowrap text-white text-sm/sm select-none drag-none"
+    >{i18n.isTyping}...</span
+  >
+  <div class="flex-1 min-w-1"></div>
+  {#if status}
+    <LiveStatus class="flex-none" {...status} />
+  {/if}
 </div>

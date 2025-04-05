@@ -1,14 +1,16 @@
 <script>
-  const { state, message } = $props();
+  const { class: klass = "", state, message } = $props();
 </script>
 
-<div class="flex items-center gap-1">
+<div class={["flex items-center gap-1", klass]}>
   <div
     class={[
-      "size-[10px] rounded-full",
+      "size-[10px] flex-none rounded-full",
       state === "live" && "bg-green",
       state === "offline" && "bg-red",
     ]}
   ></div>
-  <span class="text-white text-sm/sm select-none drag-none">{message}</span>
+  <span class="text-white text-sm/sm select-none drag-none truncate"
+    >{message}</span
+  >
 </div>

@@ -1,12 +1,11 @@
 <script>
-  const { color, class: klass } = $props();
+  const { class: klass } = $props();
 </script>
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 16 16"
-  stroke={color}
-  class={klass}
+  class={["stroke-current", klass]}
 >
   <path
     d="m5 3 5 5m-5 5 5-5"

@@ -12,5 +12,5 @@
     >{name}</span
   >
   <div class="flex-1 min-w-1"></div>
-  <IconChevron class="size-3 rotate-90" color="white" />
+  <IconChevron class="flex-none text-white size-3 rotate-90" />
 </button>

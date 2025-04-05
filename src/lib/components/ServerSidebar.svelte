@@ -1,5 +1,5 @@
 <script>
-  import IconChevron from "$lib/icons/IconChevron.svelte";
+  import IconConversation from "$lib/icons/IconConversation.svelte";
   import ChannelEntry from "./ChannelEntry.svelte";
   import ScrollArea from "./ScrollArea.svelte";
   import ServerHeader from "./ServerHeader.svelte";
@@ -14,18 +14,35 @@
   <ScrollArea class="flex flex-col flex-1 py-4">
     {#each [...Array(70)] as i}
       <ChannelEntry
-        name="server-one-overly-very-very-very-long"
+        name="ąĄčęėįšų„rasmjgllll｜∫rasmjglrasmjglrasmjglrasmjgl-one-overly-very-very-very-long"
+        Icon={IconConversation}
         notification={true}
         pings={0}
       />
       <ChannelEntry
-        name="server-one-overly-very-very-very-long"
+        name="ąĄčęėįšų„rasmjgllll｜∫rasmjglrasmjglrasmjglrasmjgl-one-overly-very-very-very-long"
+        Icon={IconConversation}
         notification={true}
         pings={95293}
       />
-      <ChannelEntry name="server-one" notification={false} pings={0} />
-      <ChannelEntry name="server-one" notification={true} pings={0} />
-      <ChannelEntry name="server-one" notification={true} pings={1} />
+      <ChannelEntry
+        name="server-one"
+        Icon={IconConversation}
+        notification={false}
+        pings={0}
+      />
+      <ChannelEntry
+        name="server-one"
+        Icon={IconConversation}
+        notification={true}
+        pings={0}
+      />
+      <ChannelEntry
+        name="server-one"
+        Icon={IconConversation}
+        notification={true}
+        pings={1}
+      />
     {/each}
   </ScrollArea>
 </div>
