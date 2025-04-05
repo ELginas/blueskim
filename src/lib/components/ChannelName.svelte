@@ -1,11 +1,20 @@
 <script>
-  const { name, disabled } = $props();
+  import IconChannel from "$lib/icons/IconChannel.svelte";
+  import IconConversation from "$lib/icons/IconConversation.svelte";
+
+  const { Icon = IconChannel, name, disabled } = $props();
 </script>
 
-<span class="inline-flex items-center gap-2 select-none drag-none">
-  <div class={["size-4", disabled ? "bg-disabled" : "bg-white"]}></div>
+<span
+  class="inline-flex overflow-hidden items-center gap-2 select-none drag-none"
+>
+  <Icon
+    class={["size-4 flex-none", disabled ? "text-disabled" : "text-white"]}
+  />
   <span
-    class={["text-base/base", disabled ? "text-disabled-text" : "text-white"]}
-    >{name}</span
+    class={[
+      "truncate text-base/base",
+      disabled ? "text-disabled-text" : "text-white",
+    ]}>{name}</span
   >
 </span>

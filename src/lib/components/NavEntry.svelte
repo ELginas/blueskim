@@ -14,8 +14,8 @@
     <ContextMenu.Trigger> -->
   <Tooltip
     class={[
-      "peer w-[48px] h-[48px] bg-white-50 mx-3 hover:rounded-[12px] transition-all",
-      active ? "rounded-[12px]" : "rounded-[24px]",
+      "peer size-[42px] bg-white-50 mx-3 hover:rounded-[12px] transition-all",
+      active ? "rounded-[12px]" : "rounded-[21px]",
     ]}
     side="right"
     align="center"

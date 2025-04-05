@@ -19,6 +19,7 @@ body,
   --color-border: #4c4c4c;
   --color-green: #6ae65a;
   --color-red: #fe5252;
+  --color-blue: #246cc4;
   --color-disabled: #4f4f4f;
   --color-disabled-text: #929292;
   --color-neutral: #919191;
@@ -49,9 +50,11 @@ body,
 
   --text-base: 12px;
   --text-sm: 10px;
+  --text-xs: 8px;
 
   --leading-base: 12px;
   --leading-sm: 10px;
+  --leading-xs: 8px;
 }
 
 @layer components {
