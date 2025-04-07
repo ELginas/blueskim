@@ -5,14 +5,24 @@
   import ContextMenuSeparator from "./ContextMenuSeparator.svelte";
   import ContextMenuSub from "./ContextMenuSub.svelte";
   import NotificationHalfBubble from "./NotificationHalfBubble.svelte";
-  const { active, notification, name } = $props();
+  import ServerImage from "./ServerImage.svelte";
+  const { id, active, notification, pings, name } = $props();
 </script>
 
 <!-- TODO: keep tooltip open if alr open, fix context and tooltip when exiting page focus, tooltip clashing with contextmenu -->
 <div class="flex w-full items-center relative">
   <!-- <ContextMenu.Root>
     <ContextMenu.Trigger> -->
-  <Tooltip
+  <ServerImage
+    {id}
+    {pings}
+    class="peer mx-3 size-[42px]"
+    classImage={[
+      "no-interact hover:rounded-[12px] transition-all",
+      active ? "rounded-[12px]" : "rounded-[21px]",
+    ]}
+  />
+  <!-- <Tooltip
     class={[
       "peer size-[42px] bg-white-50 mx-3 hover:rounded-[12px] transition-all",
       active ? "rounded-[12px]" : "rounded-[21px]",
@@ -23,7 +33,7 @@
     {#snippet content()}
       {name}
     {/snippet}
-  </Tooltip>
+  </Tooltip> -->
   <!-- </ContextMenu.Trigger>
     <ContextMenu.Content
       class="z-10 bg-gray-900 rounded-md border-gray-300 border p-2"

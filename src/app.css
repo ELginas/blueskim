@@ -9,6 +9,8 @@ body,
 
 body {
   font-family: "IBM Plex Sans Variable", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @theme {
@@ -62,12 +64,16 @@ body {
 }
 
 @layer components {
-  .drag-none {
+  .no-interact {
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
 

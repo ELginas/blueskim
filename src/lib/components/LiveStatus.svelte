@@ -10,7 +10,5 @@
       state === "offline" && "bg-red",
     ]}
   ></div>
-  <span class="text-white text-sm/sm select-none drag-none truncate"
-    >{message}</span
-  >
+  <span class="text-white text-sm/sm no-interact truncate">{message}</span>
 </div>

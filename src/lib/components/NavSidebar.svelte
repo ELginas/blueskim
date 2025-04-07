@@ -7,11 +7,11 @@
 </script>
 
 <div class="flex flex-col py-3 bg-background gap-2 border-r border-border">
-  {#each [...Array(4)] as _}
-    <NavEntry name="Example name" />
+  {#each [...Array(4).keys()] as i}
+    <NavEntry name="Example name" id={i} pings={i} />
   {/each}
   <SidebarSeparator />
-  <NavEntry active />
+  <NavEntry active id={255} pings={25} />
   <NavEntry notification />
   <SidebarSeparator />
   <NavButton Icon={IconAdd} />

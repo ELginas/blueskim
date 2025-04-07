@@ -1,8 +1,8 @@
 <script>
-  import NotificationBadge from "$lib/components/NotificationBadge.svelte";
-
   let {
+    id,
     class: klass,
+    classImage,
     offsetWidth,
     baseSize = $bindable(),
     width = $bindable(),
@@ -12,15 +12,15 @@
 </script>
 
 <div class={["relative", klass]} bind:clientWidth={baseSize}>
-  <svg xmlns="http://www.w3.org/2000/svg" width={baseSize} height={baseSize}>
+  <svg
+    class="absolute"
+    xmlns="http://www.w3.org/2000/svg"
+    width={baseSize}
+    height={baseSize}
+  >
     <defs>
-      <mask id="mask">
-        <circle
-          cx={baseSize / 2}
-          cy={baseSize / 2}
-          r={baseSize / 2}
-          fill="white"
-        />
+      <mask id="mask{id}">
+        <rect x="0" y="0" height={baseSize} width={baseSize} fill="white" />
         <rect
           x={baseSize - width}
           y={baseSize - height}
@@ -35,15 +35,15 @@
         />
       </mask>
     </defs>
-    <image
-      href="/test_64x64.png"
-      x="0"
-      y="0"
-      height={baseSize}
-      width={baseSize}
-      mask="url(#mask)"
-    />
   </svg>
+  <img
+    class={classImage}
+    style="mask: url(#mask{id});"
+    src="/test_64x64.png"
+    width={baseSize}
+    height={baseSize}
+    alt=""
+  />
   {#if badge}
     <div class="absolute bottom-0 right-0">
       {@render badge()}

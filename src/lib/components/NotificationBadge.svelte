@@ -13,7 +13,8 @@
   bind:clientWidth
   bind:clientHeight
 >
-  <span class="text-center text-white font-bold text-sm/sm min-w-[10px]"
+  <span
+    class="text-center text-white font-bold text-sm/sm min-w-[10px] no-interact"
     >{count}</span
   >
 </div>

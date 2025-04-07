@@ -38,7 +38,7 @@
 
 {#snippet category(name, count)}
   <div
-    class="flex mb-2 font-semibold select-none drag-none text-disabled-text text-sm/sm gap-0.5"
+    class="flex mb-2 font-semibold no-interact text-disabled-text text-sm/sm gap-0.5"
   >
     <!-- TODO: center em dash by taking away trailing right space from truncated text -->
     <span class="truncate">{name}</span>
