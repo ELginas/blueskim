@@ -7,6 +7,10 @@ body,
   height: 100%;
 }
 
+body {
+  font-family: "IBM Plex Sans Variable", sans-serif;
+}
+
 @theme {
   /* --color-background: #000000;
   --color-gray-100: #19191c;

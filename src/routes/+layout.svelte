@@ -1,5 +1,6 @@
 <script>
   import "../app.css";
+  import "@fontsource-variable/ibm-plex-sans";
   import { Tooltip } from "bits-ui";
 
   let { children } = $props();
