@@ -13,14 +13,9 @@
     <ServerImage id="1" classImage="rounded-full" pings={count + 100} />
   {/if}
   <div class="flex gap-1">
-    <input
-      class="bg-background border border-border text-white text-base/base font-semibold px-2 py-1 rounded-md focus:outline outline-white"
-      type="number"
-      bind:value={count}
-    />
-    <button
-      class="px-2 py-1 text-white font-semibold text-base/base bg-background border border-border rounded-md"
-      onclick={() => (visible = !visible)}>{visible ? "Hide" : "Show"}</button
+    <input class="input" type="number" bind:value={count} />
+    <button class="btn" onclick={() => (visible = !visible)}
+      >{visible ? "Hide" : "Show"}</button
     >
   </div>
 </div>

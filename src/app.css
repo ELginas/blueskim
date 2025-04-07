@@ -75,6 +75,14 @@ body {
     -ms-user-select: none;
     user-select: none;
   }
+
+  .btn {
+    @apply px-2 py-1 text-white font-semibold text-base/base bg-background border border-border rounded-md;
+  }
+
+  .input {
+    @apply bg-background border border-border text-white text-base/base font-semibold px-2 py-1 rounded-md focus:outline outline-white;
+  }
 }
 
 @layer base {
