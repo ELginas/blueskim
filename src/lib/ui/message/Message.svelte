@@ -29,7 +29,7 @@
     {#if !isSmall}
       <div class="flex gap-2 items-center mb-1.5">
         <span
-          class="text-base/base text-white hover:underline hover:cursor-pointer truncate"
+          class="text-base/base font-medium text-white hover:underline hover:cursor-pointer truncate"
           >{username}</span
         >
         <span class="whitespace-nowrap text-sm/sm text-disabled-text"
