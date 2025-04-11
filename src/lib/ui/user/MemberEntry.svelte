@@ -1,5 +1,5 @@
 <script>
-  import UserStatus from "./UserStatus.svelte";
+  import UserStatus from "$lib/ui/user/UserStatus.svelte";
 
   const { username, isApp, status } = $props();
 </script>

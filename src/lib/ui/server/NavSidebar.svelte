@@ -1,7 +1,7 @@
 <script>
-  import NavEntry from "./NavEntry.svelte";
-  import SidebarSeparator from "./SidebarSeparator.svelte";
-  import NavButton from "./NavButton.svelte";
+  import NavEntry from "$lib/ui/server/NavEntry.svelte";
+  import SidebarSeparator from "$lib/ui/server/SidebarSeparator.svelte";
+  import NavButton from "$lib/ui/server/NavButton.svelte";
   import IconAdd from "$lib/icons/IconAdd.svelte";
   import IconCompass from "$lib/icons/IconCompass.svelte";
 </script>

@@ -1,8 +1,8 @@
 <script>
   import IconConversation from "$lib/icons/IconConversation.svelte";
-  import ChannelEntry from "./ChannelEntry.svelte";
-  import ScrollArea from "./ScrollArea.svelte";
-  import ServerHeader from "./ServerHeader.svelte";
+  import ChannelEntry from "$lib/ui/channel/ChannelEntry.svelte";
+  import ScrollArea from "$lib/ui/common/ScrollArea.svelte";
+  import ServerHeader from "$lib/ui/server/ServerHeader.svelte";
 
   const { name } = $props();
 </script>

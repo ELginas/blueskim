@@ -3,8 +3,8 @@
     offsetWidth = $bindable(),
     offsetHeight = $bindable(),
     class: klass,
-    style = "",
     children,
+    ...rest
   } = $props();
 </script>
 
@@ -12,7 +12,7 @@
   bind:offsetWidth
   bind:offsetHeight
   class={["overflow-auto", klass]}
-  {style}
+  {...rest}
 >
   {@render children?.()}
 </div>

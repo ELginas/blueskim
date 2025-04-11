@@ -1,7 +1,7 @@
 <script>
   import i18n from "$lib/i18n";
   import IconLoading from "$lib/icons/IconLoading.svelte";
-  import LiveStatus from "./LiveStatus.svelte";
+  import LiveStatus from "$lib/ui/main-content/LiveStatus.svelte";
 
   const { username, status } = $props();
 </script>

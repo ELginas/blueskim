@@ -1,11 +1,6 @@
 <script>
-  import { ContextMenu } from "bits-ui";
-  import Tooltip from "./Tooltip.svelte";
-  import ContextMenuItem from "./ContextMenuItem.svelte";
-  import ContextMenuSeparator from "./ContextMenuSeparator.svelte";
-  import ContextMenuSub from "./ContextMenuSub.svelte";
-  import NotificationHalfBubble from "./NotificationHalfBubble.svelte";
-  import ServerImage from "./ServerImage.svelte";
+  import NotificationHalfBubble from "$lib/ui/common/NotificationHalfBubble.svelte";
+  import ServerImage from "$lib/ui/server/ServerImage.svelte";
   const { id, active, notification, pings, name } = $props();
 </script>
 

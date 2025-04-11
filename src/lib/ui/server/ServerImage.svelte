@@ -1,6 +1,6 @@
 <script>
-  import MaskedImage from "$lib/components/MaskedImage.svelte";
-  import NotificationBadge from "$lib/components/NotificationBadge.svelte";
+  import MaskedImage from "$lib/ui/server/MaskedImage.svelte";
+  import NotificationBadge from "$lib/ui/common/NotificationBadge.svelte";
 
   let { id, class: klass = "", classImage = "", pings } = $props();
 

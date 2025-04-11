@@ -1,7 +1,7 @@
 <script>
-  import MainContent from "$lib/components/MainContent.svelte";
-  import NavSidebar from "$lib/components/NavSidebar.svelte";
-  import ServerSidebar from "$lib/components/ServerSidebar.svelte";
+  import MainContent from "$lib/ui/main-content/MainContent.svelte";
+  import NavSidebar from "$lib/ui/server/NavSidebar.svelte";
+  import ServerSidebar from "$lib/ui/server/ServerSidebar.svelte";
 </script>
 
 <div class="flex h-full">

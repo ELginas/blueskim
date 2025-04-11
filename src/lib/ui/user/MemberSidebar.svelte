@@ -1,6 +1,6 @@
 <script>
-  import MemberEntry from "./MemberEntry.svelte";
-  import ScrollArea from "./ScrollArea.svelte";
+  import MemberEntry from "$lib/ui/user/MemberEntry.svelte";
+  import ScrollArea from "$lib/ui/common/ScrollArea.svelte";
 
   const user = {
     username: "Carl-bo",

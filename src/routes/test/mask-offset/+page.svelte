@@ -1,5 +1,5 @@
 <script>
-  import ServerImage from "$lib/components/ServerImage.svelte";
+  import ServerImage from "$lib/components/server/ServerImage.svelte";
 
   let count = $state(92);
   let visible = $state(false);

@@ -1,7 +1,7 @@
 <script>
-  import ChannelName from "./ChannelName.svelte";
-  import NotificationBadge from "./NotificationBadge.svelte";
-  import NotificationHalfBubble from "./NotificationHalfBubble.svelte";
+  import ChannelName from "$lib/ui/channel/ChannelName.svelte";
+  import NotificationBadge from "$lib/ui/common/NotificationBadge.svelte";
+  import NotificationHalfBubble from "$lib/ui/common/NotificationHalfBubble.svelte";
 
   const { Icon, name, notification, pings } = $props();
 </script>

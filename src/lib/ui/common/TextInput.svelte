@@ -2,7 +2,7 @@
   import i18n from "$lib/i18n";
   import IconAddCircle from "$lib/icons/IconAddCircle.svelte";
   import IconEmoji from "$lib/icons/IconEmoji.svelte";
-  import ChannelName from "./ChannelName.svelte";
+  import ChannelName from "../channel/ChannelName.svelte";
 
   const { Icon, name } = $props();
 </script>

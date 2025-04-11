@@ -1,5 +1,5 @@
 <script>
-  import ScrollArea from "$lib/components/ScrollArea.svelte";
+  import ScrollArea from "$lib/components/common/ScrollArea.svelte";
   import { contextMenu } from "$lib/useContextMenu";
 
   let directionX = 0;

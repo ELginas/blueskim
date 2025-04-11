@@ -1,5 +1,5 @@
 <script>
-  import ChannelName from "./ChannelName.svelte";
+  import ChannelName from "$lib/ui/channel/ChannelName.svelte";
 
   const { Icon, name } = $props();
 </script>
