@@ -10,8 +10,9 @@
 <div class="flex border-t border-border p-3 items-center gap-3 overflow-hidden">
   <IconAddCircle class="flex-none size-4 text-neutral" />
   <div class="inline-flex gap-2 flex-1 items-center overflow-hidden">
-    <span class="text-base/base text-disabled-text">{i18n.message}</span>
-    <ChannelName {Icon} {name} disabled={true} />
+    <!-- <span class="text-base/base text-disabled-text">{i18n.message}</span>
+    <ChannelName {Icon} {name} disabled={true} /> -->
+    <input type="text" class="flex-1 text-white font-base/base" />
   </div>
   <IconEmoji class="flex-none size-4 text-neutral" />
 </div>
