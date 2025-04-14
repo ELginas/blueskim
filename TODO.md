@@ -13,6 +13,8 @@ Complex components or yoink a lib:
 - channel dragging
 - emoji replacement
 - global command search
+- optimized message loading (basically unload chunks after scrolling far enough)
+- file upload
 
 Other components:
 
@@ -22,13 +24,18 @@ Other components:
 - user
 - settings
 - profile
-- emoji selection
+- emoji selection (might be problems with perf on scale)
 - message editing & writing
 - toolbar
 - settings menu sidebar
 - checkbox
 - slider with markers
 - tab bar
+- lots of CRUD
+- friends & DMs
 - transition and animations
+- voice & video calls
+- forums
+- threads
 
 And then +backend +mobile
