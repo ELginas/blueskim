@@ -1,1 +1,1 @@
-<div class="h-[2px] mx-3 bg-disabled"></div>
+<div class="h-[1px] mx-3 bg-disabled"></div>

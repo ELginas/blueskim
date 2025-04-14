@@ -1,10 +1,10 @@
 <script>
   import { Tooltip } from "bits-ui";
   import { fade } from "svelte/transition";
-  const { side, align, child, content } = $props();
+  let { side, align, child, content, open = $bindable() } = $props();
 </script>
 
-<Tooltip.Root delayDuration={0}>
+<Tooltip.Root delayDuration={0} disableHoverableContent={true} bind:open>
   <Tooltip.Trigger {child} />
   <Tooltip.Portal>
     <Tooltip.Content forceMount sideOffset={8} {side} {align}>
