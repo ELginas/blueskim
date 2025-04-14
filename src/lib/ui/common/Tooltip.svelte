@@ -1,0 +1,26 @@
+<script>
+  import { Tooltip } from "bits-ui";
+  import { fade } from "svelte/transition";
+  const { side, align, child, content } = $props();
+</script>
+
+<Tooltip.Root delayDuration={0}>
+  <Tooltip.Trigger {child} />
+  <Tooltip.Portal>
+    <Tooltip.Content forceMount sideOffset={8} {side} {align}>
+      {#snippet child({ wrapperProps, props, open })}
+        {#if open}
+          <div {...wrapperProps}>
+            <div
+              class="bg-background border border-border rounded-md p-2 flex"
+              transition:fade={{ duration: 100 }}
+              {...props}
+            >
+              {@render content?.()}
+            </div>
+          </div>
+        {/if}
+      {/snippet}
+    </Tooltip.Content>
+  </Tooltip.Portal>
+</Tooltip.Root>

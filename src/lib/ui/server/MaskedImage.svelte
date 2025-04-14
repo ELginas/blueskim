@@ -8,10 +8,11 @@
     width = $bindable(),
     height = $bindable(),
     badge,
+    domProps,
   } = $props();
 </script>
 
-<div class={["relative", klass]} bind:clientWidth={baseSize}>
+<div class={["relative", klass]} bind:clientWidth={baseSize} {...domProps}>
   <svg
     class="absolute"
     xmlns="http://www.w3.org/2000/svg"

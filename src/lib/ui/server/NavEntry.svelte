@@ -1,6 +1,7 @@
 <script>
   import NotificationHalfBubble from "$lib/ui/common/NotificationHalfBubble.svelte";
   import ServerImage from "$lib/ui/server/ServerImage.svelte";
+  import Tooltip from "../common/Tooltip.svelte";
   const { id, active, notification, pings, name } = $props();
 </script>
 
@@ -8,15 +9,24 @@
 <div class="flex w-full items-center relative">
   <!-- <ContextMenu.Root>
     <ContextMenu.Trigger> -->
-  <ServerImage
-    {id}
-    {pings}
-    class="peer mx-3 size-[42px]"
-    classImage={[
-      "no-interact hover:rounded-[12px] transition-all",
-      active ? "rounded-[12px]" : "rounded-[21px]",
-    ]}
-  />
+  <Tooltip side="right" align="center">
+    {#snippet child({ props })}
+      <ServerImage
+        {id}
+        {pings}
+        class="peer mx-3 size-[42px]"
+        classImage={[
+          "no-interact hover:rounded-[12px] transition-all",
+          active ? "rounded-[12px]" : "rounded-[21px]",
+        ]}
+        domProps={props}
+      />
+    {/snippet}
+    {#snippet content()}
+      <span class="text-white font-medium text-base/base">{name}</span>
+    {/snippet}
+  </Tooltip>
+
   <!-- <Tooltip
     class={[
       "peer size-[42px] bg-white-50 mx-3 hover:rounded-[12px] transition-all",

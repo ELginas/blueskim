@@ -38,4 +38,10 @@ Other components:
 - forums
 - threads
 
+Knitpick left unimplemented:
+
+- tooltip for overflowing text
+- tooltip arrow
+- tooltip do not play animation when rehovering on another element and showing tooltip immediately
+
 And then +backend +mobile
