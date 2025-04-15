@@ -14,7 +14,6 @@
   let isTooltipOpen = $state(false);
 </script>
 
-<!-- TODO: keep tooltip open if alr open, fix context and tooltip when exiting page focus, tooltip clashing with contextmenu -->
 <div class="flex w-full items-center relative">
   <Tooltip side="right" align="center" bind:open={isTooltipOpen}>
     {#snippet child({ props })}
