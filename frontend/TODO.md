@@ -44,5 +44,6 @@ Knitpick left unimplemented:
 - tooltip arrow
 - tooltip do not play animation when rehovering on another element and showing tooltip immediately
 - context menu descriptions
+- member category center em dash by taking away trailing right space from truncated text
 
 And then +backend +mobile

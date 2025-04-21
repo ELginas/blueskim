@@ -1,14 +1,14 @@
 <script>
   import NotificationHalfBubble from "$lib/ui/common/NotificationHalfBubble.svelte";
   import ServerImage from "$lib/ui/server/ServerImage.svelte";
-  import Tooltip from "../common/Tooltip.svelte";
-  import ContextMenuItem from "../common/context-menu/ContextMenuItem.svelte";
+  import Tooltip from "$lib/ui/common/Tooltip.svelte";
+  import ContextMenuItem from "$lib/ui/common/context-menu/ContextMenuItem.svelte";
   import IconId from "$lib/icons/IconId.svelte";
   import IconLeave from "$lib/icons/IconLeave.svelte";
-  import ContextMenuSeparator from "../common/context-menu/ContextMenuSeparator.svelte";
+  import ContextMenuSeparator from "$lib/ui/common/context-menu/ContextMenuSeparator.svelte";
   import IconTwoUsersAdd from "$lib/icons/IconTwoUsersAdd.svelte";
-  import ContextMenuSubItem from "../common/context-menu/ContextMenuSubItem.svelte";
-  import ContextMenu from "../common/context-menu/ContextMenu.svelte";
+  import ContextMenuSubItem from "$lib/ui/common/context-menu/ContextMenuSubItem.svelte";
+  import ContextMenu from "$lib/ui/common/context-menu/ContextMenu.svelte";
   const { id, active, notification, pings, name } = $props();
 
   let isTooltipOpen = $state(false);

@@ -2,7 +2,7 @@
   import "../app.css";
   import "@fontsource-variable/ibm-plex-sans";
   import { Tooltip } from "bits-ui";
-  import { getContext, setContext } from "svelte";
+  import { setContext } from "svelte";
 
   let { children } = $props();
 

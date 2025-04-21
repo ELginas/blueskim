@@ -4,7 +4,6 @@
   const { type, ...rest } = $props();
 
   const isImage = $derived.by(() => type.startsWith("image/"));
-  $inspect(rest);
 </script>
 
 {#if isImage}
