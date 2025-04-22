@@ -133,4 +133,4 @@ Time crate UNIX: 1483228802
 Sys time seconds: 1483228802
 ```
 
-Can't really test with NTP tho but that's unfortunate because leap seconds are corrected by NTP servers.
+Can't really test with NTP tho but that's unfortunate because leap seconds are corrected by NTP servers (I think so or some appropriate local daemon handling leap seconds).
