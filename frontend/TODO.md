@@ -46,4 +46,7 @@ Knitpick left unimplemented:
 - context menu descriptions
 - member category center em dash by taking away trailing right space from truncated text
 
+- track client state serverside and only send minimal necessary data based on that.
+- only use WS for server communication
+
 And then +backend +mobile

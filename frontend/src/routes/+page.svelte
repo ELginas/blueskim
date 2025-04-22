@@ -9,6 +9,9 @@
     ...[...Array(4).keys()].map((i) => ({
       name: "Example name",
       id: i,
+      channels: [0, 1, 2, 3],
+      members: [],
+      // derive from channels
       pings: i,
     })),
     {
