@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cargo",
+      "command": "run",
+      "args": ["--package", "blueskim-backend", "--example", "bitvec"],
+      "problemMatcher": ["$rustc"],
+      "label": "rust: run bitvec",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": true,
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ]
+}
